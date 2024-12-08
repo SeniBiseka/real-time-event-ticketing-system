@@ -23,7 +23,7 @@ public class ConfigurationCLI {
         validInput = false;
         while (!validInput) {
             try {
-            System.out.print("Enter ticket release rate: ");
+            System.out.print("Enter ticket release rate per second: ");
             config.setTicketReleaseRate(scanner.nextInt());
             validInput = true;
             } catch (Exception e) {
@@ -35,7 +35,7 @@ public class ConfigurationCLI {
         validInput = false;
         while (!validInput) {
             try {
-            System.out.print("Enter customer retrieval rate: ");
+            System.out.print("Enter customer retrieval rate per second: ");
             config.setCustomerRetrievalRate(scanner.nextInt());
             validInput = true;
             } catch (Exception e) {

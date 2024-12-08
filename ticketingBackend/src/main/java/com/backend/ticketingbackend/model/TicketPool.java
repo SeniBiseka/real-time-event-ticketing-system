@@ -24,7 +24,7 @@ public class TicketPool {
         }
         this.ticketQueue.add(ticket);
         notifyAll();  //notify the waiting threads
-        System.out.println(Thread.currentThread().getName() + " has added a ticket to the pool. Cuurent size is " +
+        System.out.println(Thread.currentThread().getName() + " has added a ticket to the pool. Current size is " +
                 ticketQueue.size());
     }
 
@@ -39,7 +39,7 @@ public class TicketPool {
         }
         Ticket ticket = ticketQueue.poll(); //remove ticket form the front
         notifyAll();
-        System.out.println(Thread.currentThread().getName() + "has bought a ticket from the pool. Current size is " +
+        System.out.println(Thread.currentThread().getName() + " has bought a ticket from the pool. Current size is " +
                 ticketQueue.size() + ". Ticket is " + ticket);
 
         return ticket;
