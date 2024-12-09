@@ -6,7 +6,7 @@ public class ModelMain {
 
         Vendor[] vendors = new Vendor[10];
         for(int i = 0; i < vendors.length; i++) {
-            vendors [i] = new Vendor(ticketPool,20,5);
+            vendors [i] = new Vendor(ticketPool,5,5);
             Thread vendorThread = new Thread(vendors [i], "Vendor "+ i); //used 3rd constructor of thread class
             vendorThread.start();
         }

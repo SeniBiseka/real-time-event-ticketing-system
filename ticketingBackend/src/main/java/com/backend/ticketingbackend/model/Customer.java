@@ -16,6 +16,10 @@ public class Customer implements Runnable{
     public void run() {
         for (int i = 0; i < quantity; i++) {
             Ticket ticket = ticketPool.buyTicket(); //Remove ticket from the ticketPool
+            if (ticket == null) {
+                System.out.println("No more tickets available for " + Thread.currentThread().getName());
+                break;
+            }
             System.out.println("Ticket bought by " + Thread.currentThread().getName() + ". Ticket is " +
                     ticket);
 
