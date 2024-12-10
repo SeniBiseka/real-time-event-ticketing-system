@@ -22,8 +22,6 @@ public class Customer implements Runnable{
                 System.out.println("No more tickets available for " + Thread.currentThread().getName());
                 break;
             }
-            System.out.println("Ticket bought by " + Thread.currentThread().getName() + ". Ticket is " +
-                    ticket);
 
             try{
                 Thread.sleep(customerRetrievalRate * 1000);
