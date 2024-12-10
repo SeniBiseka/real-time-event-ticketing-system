@@ -1,5 +1,6 @@
 package com.backend.ticketingbackend.model;
 
+import com.backend.ticketingbackend.config.Configuration;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -7,8 +8,8 @@ public class TicketPool {
     private Queue<Ticket> ticketQueue;
     private int maximumCapacity;
 
-    public TicketPool(int maximumCapacity) {
-        this.maximumCapacity = maximumCapacity;
+    public TicketPool(Configuration config) {
+        this.maximumCapacity = config.getMaxTicketCapacity();
         this.ticketQueue = new LinkedList<>();
     }
 
