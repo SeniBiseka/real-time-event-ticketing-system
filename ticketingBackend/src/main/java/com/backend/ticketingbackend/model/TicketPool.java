@@ -1,6 +1,7 @@
 package com.backend.ticketingbackend.model;
 
 import com.backend.ticketingbackend.config.Configuration;
+import com.backend.ticketingbackend.logging.Logger;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -19,13 +20,13 @@ public class TicketPool {
             try {
                 wait();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Logger.log("Error: Thread interrupted while waiting to add ticket - " + e.getMessage());
                 throw new RuntimeException(e.getMessage());
             }
         }
         this.ticketQueue.add(ticket);
         notifyAll();  //notify the waiting threads
-        System.out.println(Thread.currentThread().getName() + " has added a ticket to the pool. Current size is " +
+        Logger.log(Thread.currentThread().getName() + " has added a ticket to the pool. Current size is " +
                 ticketQueue.size());
     }
 
@@ -35,12 +36,13 @@ public class TicketPool {
             try {
                 wait();
             } catch (InterruptedException e) {
+                Logger.log("Error: Thread interrupted while waiting to buy ticket - " + e.getMessage());
                 throw new RuntimeException(e.getMessage());
             }
         }
         Ticket ticket = ticketQueue.poll(); //remove ticket form the front
         notifyAll();
-        System.out.println(Thread.currentThread().getName() + " has bought a ticket from the pool. Current size is " +
+        Logger.log(Thread.currentThread().getName() + " has bought a ticket from the pool. Current size is " +
                 ticketQueue.size() + ". Ticket is " + ticket);
 
         return ticket;
