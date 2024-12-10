@@ -1,14 +1,16 @@
 package com.backend.ticketingbackend.model;
 
+import com.backend.ticketingbackend.config.Configuration;
+
 public class Customer implements Runnable{
 
     private TicketPool ticketPool;
     private int customerRetrievalRate; //Ticket removal Frequency from the pool
     private int quantity; //Quantity customer willing to purchase
 
-    public Customer(TicketPool ticketPool, int customerRetrievalRate, int quantity) {
+    public Customer(TicketPool ticketPool, Configuration config, int quantity) {
         this.ticketPool = ticketPool;
-        this.customerRetrievalRate = customerRetrievalRate;
+        this.customerRetrievalRate = config.getCustomerRetrievalRate();
         this.quantity = quantity;
     }
 
