@@ -1,5 +1,6 @@
 package com.backend.ticketingbackend.model;
 
+import com.backend.ticketingbackend.config.Configuration;
 import java.math.BigDecimal;
 
 public class Vendor implements Runnable{
@@ -8,10 +9,10 @@ public class Vendor implements Runnable{
     private int totalTickets; //Tickets vendor will sell
     private int ticketReleaseRate; // Ticket adding frequency
 
-    public Vendor(TicketPool ticketPool, int totalTickets, int ticketReleaseRate) {
+    public Vendor(TicketPool ticketPool, Configuration config) {
         this.ticketPool = ticketPool;
-        this.totalTickets = totalTickets;
-        this.ticketReleaseRate = ticketReleaseRate;
+        this.totalTickets = config.getTotalTickets();
+        this.ticketReleaseRate = config.getTicketReleaseRate();
     }
 
     @Override
