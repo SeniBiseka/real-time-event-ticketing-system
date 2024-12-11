@@ -23,6 +23,7 @@ public class TicketPool {
 
     //Add Ticket method which is used by vendors to addTickets
     public synchronized void addTicket(Ticket ticket) {
+        Logger.log("addTicket() called by Vendor");
         while (ticketQueue.size() >= maximumCapacity) {
             try {
                 wait();
@@ -39,6 +40,7 @@ public class TicketPool {
 
     //Buy Ticket method for the customer when buyingTickets
     public synchronized Ticket buyTicket() {
+        Logger.log("buyTicket() called by Customer");
         while (ticketQueue.isEmpty()) {
             try {
                 wait();

@@ -10,7 +10,7 @@ public class Logger {
     private static final String LOG_FILE = "system_logs.txt"; // Log file path
 
     // Method to log messages to both console and file
-    public static void log(String message) {
+    public synchronized static void log(String message) {
         // Get the current timestamp
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 

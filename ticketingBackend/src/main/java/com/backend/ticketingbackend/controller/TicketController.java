@@ -1,3 +1,73 @@
+//2nd try
+package com.backend.ticketingbackend.controller;
+
+import com.backend.ticketingbackend.config.Configuration;
+import com.backend.ticketingbackend.model.TicketPool;
+import com.backend.ticketingbackend.model.Vendor;
+import com.backend.ticketingbackend.model.Customer;
+import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+@RestController
+@RequestMapping("/api/tickets")
+public class TicketController {
+
+    @Autowired
+    private Configuration config;
+
+    @Autowired
+    private TicketPool ticketPool;
+
+    // Start the ticketing system
+    @PostMapping("/start")
+    public String startSystem(@RequestParam int customerQuantity) {
+        // Load the configuration if it's not already set
+        if (config.getTotalTickets() == 0) {
+            Configuration loadedConfig = loadConfigurationFromFile();
+            if (loadedConfig != null) {
+                this.config = loadedConfig;
+            }
+        }
+
+        // Start Vendor in a new thread
+        Vendor vendor = new Vendor(ticketPool, config);
+        Thread vendorThread = new Thread(vendor);
+        vendorThread.start();
+
+        // Start Customer in a new thread
+        Customer customer = new Customer(ticketPool, config, customerQuantity);
+        Thread customerThread = new Thread(customer);
+        customerThread.start();
+
+        return "Ticketing system started with " + config.getTotalTickets() + " tickets.";
+    }
+
+    @GetMapping("/available")
+    public int getAvailableTickets() {
+        return ticketPool.getAvailableTickets();
+    }
+
+    // Get the current configuration
+    @GetMapping("/config")
+    public Configuration getConfig() {
+        return config;
+    }
+
+    private Configuration loadConfigurationFromFile() {
+        try (FileReader reader = new FileReader("config.json")) {
+            Gson gson = new Gson();
+            return gson.fromJson(reader, Configuration.class);
+        } catch (IOException e) {
+            System.out.println("Error loading configuration: " + e.getMessage());
+            return null;
+        }
+    }
+}
+
 //1st try
 //package com.backend.ticketingbackend.controller;
 //
@@ -60,90 +130,3 @@
 //    }
 //}
 //
-
-package com.backend.ticketingbackend.controller;
-
-import com.backend.ticketingbackend.config.Configuration;
-import com.backend.ticketingbackend.model.TicketPool;
-import com.backend.ticketingbackend.model.Vendor;
-import com.backend.ticketingbackend.model.Customer;
-import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-@RestController
-@RequestMapping("/api/tickets")
-public class TicketController {
-
-    @Autowired
-    private Configuration config;
-
-    @Autowired
-    private TicketPool ticketPool;
-
-    private final ExecutorService executor = Executors.newCachedThreadPool();
-
-//    // Configuration endpoint
-//    @PostMapping("/configure")
-//    public String configureSystem(@RequestParam int totalTickets,
-//                                  @RequestParam int ticketReleaseRate,
-//                                  @RequestParam int customerRetrievalRate,
-//                                  @RequestParam int maxTicketCapacity) {
-//        config.setTotalTickets(totalTickets);
-//        config.setTicketReleaseRate(ticketReleaseRate);
-//        config.setCustomerRetrievalRate(customerRetrievalRate);
-//        config.setMaxTicketCapacity(maxTicketCapacity);
-//
-//        return "System configured with " + totalTickets + " tickets, release rate of " + ticketReleaseRate + " and max capacity of " + maxTicketCapacity + ".";
-//    }
-
-    // Start the ticketing system
-    @PostMapping("/start")
-    public String startSystem(@RequestParam int customerQuantity) {
-        // Load the configuration if it's not already set
-        if (config.getTotalTickets() == 0) {
-            Configuration loadedConfig = loadConfigurationFromFile();
-            if (loadedConfig != null) {
-                this.config = loadedConfig;
-            }
-        }
-
-        // Start Vendor in a new thread
-        Vendor vendor = new Vendor(ticketPool, config);
-        Thread vendorThread = new Thread(vendor);
-        vendorThread.start();
-
-        // Start Customer in a new thread
-        Customer customer = new Customer(ticketPool, config, customerQuantity);
-        Thread customerThread = new Thread(customer);
-        customerThread.start();
-
-        return "Ticketing system started with " + config.getTotalTickets() + " tickets.";
-    }
-
-    @GetMapping("/available")
-    public int getAvailableTickets() {
-        return ticketPool.getAvailableTickets();
-    }
-
-    // Get the current configuration
-    @GetMapping("/config")
-    public Configuration getConfig() {
-        return config;
-    }
-
-    private Configuration loadConfigurationFromFile() {
-        try (FileReader reader = new FileReader("config.json")) {
-            Gson gson = new Gson();
-            return gson.fromJson(reader, Configuration.class);
-        } catch (IOException e) {
-            System.out.println("Error loading configuration: " + e.getMessage());
-            return null;
-        }
-    }
-}

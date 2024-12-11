@@ -17,6 +17,7 @@ public class Vendor implements Runnable{
 
     @Override
     public void run() {
+        System.out.println("Vendor started");
         for (int i = 1; i <= totalTickets; i++) {  //i is used as ID
             Ticket ticket = new Ticket(i, "Event Simple", new BigDecimal(1000));
             ticketPool.addTicket(ticket);

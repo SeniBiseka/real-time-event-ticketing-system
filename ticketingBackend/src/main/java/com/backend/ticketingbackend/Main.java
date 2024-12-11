@@ -16,8 +16,8 @@ public class Main {
 
         // Step 3: Create Vendor and Customer threads
         Vendor vendor = new Vendor(ticketPool, config);
-        Customer customer1 = new Customer(ticketPool, config, 5); // Customer wants 5 tickets
-        Customer customer2 = new Customer(ticketPool, config, 7); // Another customer wants 7 tickets
+        Customer customer1 = new Customer(ticketPool, config, 1); // Customer wants 5 tickets
+        Customer customer2 = new Customer(ticketPool, config, 1); // Another customer wants 7 tickets
 
         // Step 4: Start the threads
         Thread vendorThread = new Thread(vendor, "Vendor-1");

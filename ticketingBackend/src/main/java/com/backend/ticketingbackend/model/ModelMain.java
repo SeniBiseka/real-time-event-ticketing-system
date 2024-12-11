@@ -19,3 +19,16 @@
 //        }
 //    }
 //}
+
+////        Vendor[] vendors = new Vendor[2];
+////        for (int i = 0; i < vendors.length; i++) {
+////            vendors[i] = new Vendor(ticketPool,config);
+////            Thread vendorThread = new Thread(vendors[i], "Vendor-" +i);
+////            vendorThread.start();
+////        }
+////        Customer[] customers = new Customer[customerQuantity];
+////        for (int i = 0; i < customers.length; i++) {
+////            customers[i] = new Customer(ticketPool, config, 1);
+////            Thread customerThread = new Thread(customers[i], "Customer-" +i);
+////            customerThread.start();
+////        }
