@@ -113,13 +113,15 @@ public class TicketController {
             }
         }
 
-        // Start Vendor
+        // Start Vendor in a new thread
         Vendor vendor = new Vendor(ticketPool, config);
-        executor.submit(vendor);
+        Thread vendorThread = new Thread(vendor);
+        vendorThread.start();
 
-        // Start Customer
+        // Start Customer in a new thread
         Customer customer = new Customer(ticketPool, config, customerQuantity);
-        executor.submit(customer);
+        Thread customerThread = new Thread(customer);
+        customerThread.start();
 
         return "Ticketing system started with " + config.getTotalTickets() + " tickets.";
     }
