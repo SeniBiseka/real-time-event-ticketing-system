@@ -14,7 +14,6 @@ public class Customer implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("Customer thread started");
         while (true) {
             Ticket ticket = ticketPool.buyTicket(); // Remove ticket from the pool
             if (ticket == null) {

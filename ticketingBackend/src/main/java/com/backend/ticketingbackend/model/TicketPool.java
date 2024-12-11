@@ -23,15 +23,14 @@ public class TicketPool {
 
     //Add Ticket method which is used by vendors to addTickets
     public synchronized void addTicket(Ticket ticket) {
-        Logger.log("addTicket() called by Vendor");
-        while (ticketQueue.size() >= maximumCapacity) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                Logger.log("Error: Thread interrupted while waiting to add ticket - " + e.getMessage());
-                throw new RuntimeException(e.getMessage());
-            }
-        }
+//        while (ticketQueue.size() >= maximumCapacity) { //If the pool is full, the thread waits until there’s space
+//            try {
+//                wait();
+//            } catch (InterruptedException e) {
+//                Logger.log("Error: Thread interrupted while waiting to add ticket - " + e.getMessage());
+//                throw new RuntimeException(e.getMessage());
+//            }
+//        }
         this.ticketQueue.add(ticket);
         notifyAll();  //notify the waiting threads
         Logger.log(Thread.currentThread().getName() + " has added a ticket to the pool. Current size is " +
@@ -40,7 +39,6 @@ public class TicketPool {
 
     //Buy Ticket method for the customer when buyingTickets
     public synchronized Ticket buyTicket() {
-        Logger.log("buyTicket() called by Customer");
         while (ticketQueue.isEmpty()) {
             try {
                 wait();
