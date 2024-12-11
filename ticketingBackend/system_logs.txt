@@ -122,3 +122,63 @@
 [2024-12-12 02:08:43] Vendor-1 has added a ticket to the pool. Current size is 1
 [2024-12-12 02:08:43] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=5, eventName='Event Simple', ticketPrice=1000}
 [2024-12-12 02:08:43] buyTicket() by Customer end
+[2024-12-12 04:54:50] Vendor-2 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:50] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=1, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:50] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:50] Vendor-3 has added a ticket to the pool. Current size is 2
+[2024-12-12 04:54:50] Customer-1 has bought a ticket from the pool. Current size is 1. Ticket is Ticket{ticketId=1, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:51] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=1, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:52] Vendor-2 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:52] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=2, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:52] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:52] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=2, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:52] Vendor-3 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:53] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=2, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:54] Vendor-2 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:54] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=3, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:54] Vendor-3 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:54] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=3, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:54] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:55] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=3, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:56] Vendor-2 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:56] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=4, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:56] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:56] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=4, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:56] Vendor-3 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:57] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=4, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:58] Vendor-2 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:58] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=5, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:58] Vendor-3 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:58] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=5, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:54:58] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:54:59] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=5, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:00] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:00] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=1, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:00] Vendor-3 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:00] Vendor-2 has added a ticket to the pool. Current size is 2
+[2024-12-12 04:55:00] Customer-2 has bought a ticket from the pool. Current size is 1. Ticket is Ticket{ticketId=1, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:00] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=1, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:02] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:02] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=2, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:02] Vendor-3 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:02] Vendor-2 has added a ticket to the pool. Current size is 2
+[2024-12-12 04:55:02] Customer-1 has bought a ticket from the pool. Current size is 1. Ticket is Ticket{ticketId=2, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:02] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=2, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:04] Vendor-3 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:04] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=3, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:04] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:04] Vendor-2 has added a ticket to the pool. Current size is 2
+[2024-12-12 04:55:04] Customer-1 has bought a ticket from the pool. Current size is 1. Ticket is Ticket{ticketId=3, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:04] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=3, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:06] Vendor-3 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:06] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=4, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:06] Vendor-2 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:06] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=4, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:06] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:06] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=4, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:08] Vendor-3 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:08] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=5, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:08] Vendor-2 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:08] Customer-1 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=5, eventName='Event Simple', ticketPrice=1000}
+[2024-12-12 04:55:08] Vendor-1 has added a ticket to the pool. Current size is 1
+[2024-12-12 04:55:08] Customer-2 has bought a ticket from the pool. Current size is 0. Ticket is Ticket{ticketId=5, eventName='Event Simple', ticketPrice=1000}

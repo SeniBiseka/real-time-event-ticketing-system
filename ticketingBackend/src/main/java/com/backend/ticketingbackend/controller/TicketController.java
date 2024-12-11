@@ -1,4 +1,3 @@
-//2nd try
 package com.backend.ticketingbackend.controller;
 
 import com.backend.ticketingbackend.config.Configuration;
