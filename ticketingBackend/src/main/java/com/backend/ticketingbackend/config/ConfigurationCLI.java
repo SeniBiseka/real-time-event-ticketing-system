@@ -8,6 +8,11 @@ import java.util.Scanner;
 
 public class ConfigurationCLI {
 
+    public static void main(String[] args) {
+        Configuration config = ConfigureSystem(); // Call the method to configure the system
+        // use the 'config' object to pass the configuration to Spring Boot if needed
+    }
+
     public static Configuration ConfigureSystem() {
         Scanner scanner = new Scanner(System.in);
         Configuration config = null;
