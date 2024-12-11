@@ -1,5 +1,8 @@
 package com.backend.ticketingbackend.config;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Configuration {
     private int totalTickets;
     private int ticketReleaseRate;

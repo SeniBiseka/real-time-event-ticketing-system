@@ -2,9 +2,12 @@ package com.backend.ticketingbackend.model;
 
 import com.backend.ticketingbackend.config.Configuration;
 import com.backend.ticketingbackend.logging.Logger;
+import org.springframework.stereotype.Component;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
+@Component
 public class TicketPool {
     private Queue<Ticket> ticketQueue;
     private int maximumCapacity;
@@ -12,6 +15,10 @@ public class TicketPool {
     public TicketPool(Configuration config) {
         this.maximumCapacity = config.getMaxTicketCapacity();
         this.ticketQueue = new LinkedList<>();
+    }
+
+    public int getAvailableTickets() { //will use this in the controller class
+        return ticketQueue.size(); // Returns the current size of the ticket pool
     }
 
     //Add Ticket method which is used by vendors to addTickets
