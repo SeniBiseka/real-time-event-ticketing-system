@@ -6,21 +6,19 @@ public class Customer implements Runnable{
 
     private TicketPool ticketPool;
     private int customerRetrievalRate; //Ticket removal Frequency from the pool
-    private int quantity; //Quantity customer willing to purchase
 
-    public Customer(TicketPool ticketPool, Configuration config, int quantity) {
+    public Customer(TicketPool ticketPool, Configuration config) {
         this.ticketPool = ticketPool;
         this.customerRetrievalRate = config.getCustomerRetrievalRate();
-        this.quantity = quantity;
     }
 
     @Override
     public void run() {
         System.out.println("Customer thread started");
-        for (int i = 0; i < quantity; i++) {
-            Ticket ticket = ticketPool.buyTicket(); //Remove ticket from the ticketPool
+        while (true) {
+            Ticket ticket = ticketPool.buyTicket(); // Remove ticket from the pool
             if (ticket == null) {
-                System.out.println("No more tickets available for " + Thread.currentThread().getName());
+                System.out.println(Thread.currentThread().getName() + ": No more tickets available.");
                 break;
             }
 

@@ -38,10 +38,12 @@ public class TicketController {
         Thread vendorThread = new Thread(vendor);
         vendorThread.start();
 
-        // Start Customer in a new thread
-        Customer customer = new Customer(ticketPool, config, customerQuantity);
-        Thread customerThread = new Thread(customer);
-        customerThread.start();
+        // Start Customer threads
+        for (int i = 0; i < customerQuantity; i++) {
+            Customer customer = new Customer(ticketPool, config); // No need for quantity
+            Thread customerThread = new Thread(customer, "Customer-" + (i + 1));
+            customerThread.start();
+        }
 
         return "Ticketing system started with " + config.getTotalTickets() + " tickets.";
     }
