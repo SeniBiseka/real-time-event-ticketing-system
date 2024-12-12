@@ -1,4 +1,3 @@
-import React from 'react';
 import ConfigurationForm from './components/ConfigurationForm';
 import TicketDisplay from './components/TicketDisplay';
 import ControlPanel from './components/ControlPanel';

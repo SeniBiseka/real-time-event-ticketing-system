@@ -21,6 +21,12 @@ public class TicketController {
     @Autowired
     private TicketPool ticketPool;
 
+    @PostMapping("/config")
+    public String updateConfig(@RequestBody Configuration newConfig) {
+        this.config = newConfig;
+        return "Configuration updated successfully!";
+    }
+
     // Start the ticketing system
     @PostMapping("/start")
     public String startSystem(@RequestParam int customerQuantity) {
