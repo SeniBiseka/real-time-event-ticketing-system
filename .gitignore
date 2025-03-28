@@ -25,3 +25,8 @@ replay_pid*
 
 # Node.js dependencies
 node_modules/
+
+.idea/
+.mvn/
+target/
+system_logs.txt
